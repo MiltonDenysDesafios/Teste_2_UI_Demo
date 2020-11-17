@@ -24,7 +24,7 @@ public class DemoSteps {
 
 	@And("Search for any product")
 	public static void searchProduct() throws Throwable {
-		demoPage.fillUpSearch();
+		demoPage.fillUpSearch("X-Box One");
 		demoPage.clickOnSearchIcon();
 	}
 	
@@ -42,6 +42,7 @@ public class DemoSteps {
 		
 		demoPage.scrollToSearch();
 		demoPage.clickOnMyCartIcon();
+		demoPage.colectProdutcNameAndTotalPrice();
 	}
 	
 	@And("Do the Checkout")
