@@ -5,7 +5,7 @@ https://github.com/mDenys7/Teste_2_UI_Demo
 
 # Pre-Condition
 
-1-Java language must be installed in the PC
+1-Java language must be installed
 
 2-Must have an IDE of preference to run the test
 
