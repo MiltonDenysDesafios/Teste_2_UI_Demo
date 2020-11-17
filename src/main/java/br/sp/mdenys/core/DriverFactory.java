@@ -30,6 +30,7 @@ public abstract class DriverFactory {
 
 	public static void killDriver() {
 		if (driver != null) {
+			driver.close();
 			driver.quit();
 			driver = null;
 		}

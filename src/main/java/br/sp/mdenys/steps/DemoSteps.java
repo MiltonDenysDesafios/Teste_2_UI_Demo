@@ -24,7 +24,7 @@ public class DemoSteps {
 
 	@And("Search for any product")
 	public static void searchProduct() throws Throwable {
-		demoPage.fillUpSearch("X-Box One");
+		demoPage.fillUpSearch("Apple Iphone 4S");
 		demoPage.clickOnSearchIcon();
 	}
 	
@@ -47,12 +47,17 @@ public class DemoSteps {
 	
 	@And("Do the Checkout")
 	public static void doCheckout() throws Throwable {
+		demoPage.clickProceedToCheckoutButton();
+		demoPage.fillUpMandadoryFields("Test Test","06080008","test@gmail.com");
 	}
-	@And("Select the “Phone Order” Payment")
+	@And("Select the 'Phone Order' Payment")
 	public static void selectPhoneOrder() throws Throwable {
+		demoPage.clicPhoneOrderPaymentButton();
 	}
 	@And("Proceed with the order")
 	public static void proceedOrder() throws Throwable {
+		demoPage.termsAndConditionsCheckbox();
+		demoPage.clickOnPlaceOrderButton();
 	}
 	
 	
