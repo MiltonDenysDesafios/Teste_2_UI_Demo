@@ -17,51 +17,54 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 	private static WebDriver driver;
 
+	/**
+	 * @author Milton
+	 *  method to write down a string
+	 */
 	public void write(By by, String texto){
 		getDriver().findElement(by).clear();
 		getDriver().findElement(by).sendKeys(texto);
 	}
-
-	public void escrever(String id_campo, String texto){
-		write(By.id(id_campo), texto);
-	}
-	
-	
-	
+	/**
+	 * @author Milton
+	 *  method to click on a element
+	 */
 	public void click(By by) {
 		getDriver().findElement(by).click();
 	}
-	
+	/**
+	 * @author Milton
+	 *  method to sroll the screen until a element
+	 */
 	public void scrollScreen(By by){
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].scrollIntoView();", getDriver().findElement(by));
     }
 	
-	public void scrollScreenId(String id){
-		scrollScreen(By.id(id));
-    }
-	
-	
+	/**
+	 * @author Milton
+	 *  method to wait until an element to be visible
+	 */
 	public void implicityWaitVisibleElement(String xpath) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 	}
 
 	/**
-	 * metodo para coletar o texto pelo tipo
+	 * method to collect a text by element
 	 */
 	public String getText(By by) {
 		return getDriver().findElement(by).getText();
 	}
 	/**
-	 * metodo para coletar o texto pelo css selector
+	 *method to collect a text by css selector
 	 */
 	public String colectProductNameCss(String texto) {
 		return getText(By.cssSelector(texto));
 
 	}
 	/**
-	 * metodo para coletar o texto pelo xpath
+	 * method to collect a text by xpath
 	 */
 	public String colectProductNameXpath(String texto) {
 		return getText(By.xpath(texto));
